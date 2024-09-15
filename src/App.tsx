@@ -9,7 +9,6 @@ import "primereact/resources/themes/lara-light-cyan/theme.css";
 function App() {
   const [artworks, setArtworks] = useState([]);
   const [selectedProducts, setSelectedProducts] = useState<any[]>([]);
-  const [rowClick, setRowClick] = useState<boolean>(true);
   const [first, setFirst] = useState<number>(0);
   const [page, setPage] = useState<number>(1);
   const [totalRecords, setTotalRecords] = useState<number>(0);
@@ -75,7 +74,7 @@ function App() {
         )}
         <DataTable
           value={artworks}
-          selectionMode={rowClick ? "multiple" : null}
+          selectionMode={true ? "multiple" : null}
           selection={selectedProducts}
           onSelectionChange={(e: any) => setSelectedProducts(e.value)}
           dataKey="id"
